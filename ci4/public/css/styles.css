@@ -1,0 +1,206 @@
+@import 'https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap';
+
+.jost{
+  font-family: "Jost", sans-serif;
+  font-weight: bold;
+}
+
+.inter{
+    font-family: "Inter", sans-serif;
+}
+
+.footer{
+    font-family: "Inter", sans-serif;
+    font-size: .8rem;
+    margin-bottom: .5rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #11251C;
+    color: white;
+}
+
+h2{
+    font-size: 4rem;
+}
+
+section{
+    height: 100dvh;
+}
+
+.svt-pic{
+    background-image: url("./images/seventeen.png");
+    background-repeat: no-repeat;
+    height: 30rem;
+    background-position: center;
+    width: 100%;
+    background-size: cover;
+}
+
+.svt-pic .fav-word{
+    font-size: 2.3rem;
+    font-weight: 600;
+    padding: 5rem 0 0 8rem;
+}
+
+.profile{
+    background-color: #AEE06D;
+    width: min-content;
+    border-radius: 100%;
+    overflow: hidden;
+    margin-top: -10rem;
+    margin-left: 8rem;
+    position: absolute;
+}
+
+.profile img{
+    width: 23rem;
+    border-radius: 100%;
+}
+
+.name-container{
+    background: linear-gradient(to bottom, #2A533B, #11251C);
+    margin-top: -1rem;
+    height: 15rem;
+}
+
+.name-container div{
+    margin-left: 33rem;
+    margin-top: 1rem;
+}
+
+.my-name{
+    font-size: 4rem;
+}
+
+.username{
+    font-size: 1.5rem;
+}
+
+.about-me{
+    height: 100dvh;
+    background: url("./images/elys_peace.png");
+    background-repeat: no-repeat;
+    object-fit: contain;
+    background-size: cover;
+}
+
+.description{
+    margin-left: 7rem;
+    padding-top: 3rem;
+}
+
+.card-container{
+    display: flex;
+    margin: 5rem 7rem 0;
+    gap: 4rem;
+}
+
+.card-container .card{
+    flex: 1;
+    background-color: #20523B;
+    border-radius: 0.5rem;
+    padding: 1.2rem 1.8rem;
+    position: relative;
+    height: 26rem;
+}
+
+.card-title{
+    margin-bottom: .5rem;
+    font-size: 2.5rem;
+}
+
+.card hr{
+    margin-bottom: 1.5rem;
+}
+
+.card .inter{
+    margin-bottom: 1.2rem;
+    font-size: 1.4rem;
+}
+
+.card .img-row{
+    position: absolute;
+    bottom: 1rem;
+}
+
+.card .icons{
+    position: absolute;
+    bottom: 1rem;
+}
+
+.card .img-row img{
+    height: 3.5rem;
+    margin-right: .3rem;
+    border-radius: .25rem;
+}
+
+.card .icons img{
+    height: 2.5rem;
+    margin-right: .3rem;
+    border-radius: .25rem;
+}
+
+.education{
+    background: linear-gradient(to bottom, #244532, #11251C);
+}
+
+.education .jost{
+    padding-top: 3rem;
+    margin-left: 7rem;
+    font-size: 4rem;
+}
+
+.education img{
+    width: 70rem;
+}
+
+.education div{
+    width: min-content;
+    margin: 7rem auto 0;
+}
+
+.experience{
+    background: linear-gradient(to bottom, #11251C, #244532);
+}
+
+.experience .jost{
+    padding-top: 3rem;
+    margin-left: 7rem;
+}
+
+.prog-lang{
+    width: 68rem;
+    margin: 4rem auto 0;
+    display: flex;
+    overflow: hidden;
+}
+
+.carousel{
+    overflow: scroll;
+    display: grid;
+    grid-auto-flow: column;
+    overflow-y: hidden;
+    scroll-snap-type: inline mandatory;
+}
+
+.carousel > *{
+    scroll-snap-align: start;
+}
+
+.carousel .images{
+    display: inline-block;
+}
+
+.prog-lang button{
+    width: 10%;
+    background-color: transparent;
+    border: none;
+}
