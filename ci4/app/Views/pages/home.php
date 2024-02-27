@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elys</title>
-    <link rel="stylesheet" href="./css/styles.css">
-    <script src="./js/script.js" defer></script>
+    <link rel="stylesheet" href="<?php echo base_url('./css/styles.css');?>">
+    <script src="<?php echo base_url('./js/script.js');?>" defer></script>
 </head>
 <body>
     <section class="hero">
-        <div class="svt-pic">
+        <div class="svt-pic" style="background-image: url('./images/seventeen.png')">
             <p class="fav-word">기억해 언제나 우린 함께라는 걸</p>
         </div>
         <div class="profile">
-            <img src="./images/elys.png" alt="elys picture">
+            <img src="<?php echo base_url('./images/elys.png');?>" alt="elys picture">
         </div>
         <div class="name-container">
             <div>
@@ -22,7 +22,7 @@
             </div>
         </div>
     </section>
-    <section class="about-me">
+    <section class="about-me" style="background-image: url('./images/elys_peace.png')">
         <div class="description">
             <p class="my-name jost">Erika Daduya <em>!</em></p>
             <p class="intro inter">You can call me <b>Elys</b>. I am currently 20 years old.</p>

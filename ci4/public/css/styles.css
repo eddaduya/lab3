@@ -36,7 +36,6 @@ section{
 }
 
 .svt-pic{
-    background-image: url("./images/seventeen.png");
     background-repeat: no-repeat;
     height: 30rem;
     background-position: center;
@@ -86,7 +85,6 @@ section{
 
 .about-me{
     height: 100dvh;
-    background: url("./images/elys_peace.png");
     background-repeat: no-repeat;
     object-fit: contain;
     background-size: cover;
