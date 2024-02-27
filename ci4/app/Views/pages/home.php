@@ -1,169 +1,113 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
-        <title>Profile</title>
-    <style>
-        
-    </style>
-    <link rel="stylesheet" href="/lab3/ci4/public/css/style.css">
-    </head>
-    <body>
-        <div class="container">
-
-            <div class="card">
-                <div class="imgBx">
-                    <img src="./webprof/elys.png" alt="prof pic" width="150" height="150">
-                </a>
-                <h2>elys <em>!</em></h2>
-                <p>I am <strong>Erika Alessandra Daduya.</strong>
-                    <br>You can call me <em><b>Elys.</b></em>
-                    <br>I am in my 20th.
-                </p>
-                </div>  
-            </div>
-
-            <div class="card2">
-                <div class="imgBx">
-                    <img src="./icons/educicon.png" alt="educ" width="150" height="150">
-                </a>
-                <h2>education <em>!</em></h2>
-                <p>Graduated from: <b>STI College – Global City</b> in <i>BGC</i>.
-                    <br>Course: <i>BSIT - MI</i>
-                    <br>I am a DOST scholar.
-                </p>
-                </div>  
-            </div>
-
-            <div class="card">
-                <div class="imgBx">
-                    <img src="./webprof/osamu.png" alt="likes" width="150" height="150">
-                </a>
-                <h2>interests <em>!</em></h2>
-                <p>Games: <b>VALORANT</b>
-                    <br>Music: Kpop, Alt R&B, Pop
-                    <br>Libangan: watch (YT, reels, anime), play games, read
-                </p>
-                </div>  
-            </div>
-
-            <div class="card2">
-                <div class="imgBx">
-                    <img src="./webprof/ting.png" alt="life" width="147" height="147">
-                </a>
-                <h2>life <em>!</em></h2>
-                <p>Dream(s): travel to <em>Greece</em>
-                    <br>Pets: two (2) female dogs
-                    <br>Goal(s): to be stable, to finish well
-                    <br>Facts: doesn't like grass, likes mint choco, likes matcha
-                </p>
-                </div>  
-            </div>
-            
-            <div class="quote">
-                <h1><em>“Be brave. Take risks. Nothing can substitute experience.”</em></h1>
-            </div>
-
-            <div class="form">
-                <div>
-                <?php
-                // define variables and set to empty values
-                $nameErr = $emailErr = $genderErr = $websiteErr = "";
-                $name = $email = $gender = $comment = $website = "";
-
-                if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                if (empty($_POST["name"])) {
-                    $nameErr = "Name is required";
-                } else {
-                    $name = test_input($_POST["name"]);
-                    // check if name only contains letters and whitespace
-                    if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
-                    $nameErr = "Only letters and white space allowed";
-                    }
-                }
-                
-                if (empty($_POST["email"])) {
-                    $emailErr = "Email is required";
-                } else {
-                    $email = test_input($_POST["email"]);
-                    // check if e-mail address is well-formed
-                    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                    $emailErr = "Invalid email format";
-                    }
-                }
-                    
-                if (empty($_POST["website"])) {
-                    $website = "";
-                } else {
-                    $website = test_input($_POST["website"]);
-                    // check if URL address syntax is valid (this regular expression also allows dashes in the URL)
-                    if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)) {
-                    $websiteErr = "Invalid URL";
-                    }
-                }
-
-                if (empty($_POST["comment"])) {
-                    $comment = "";
-                } else {
-                    $comment = test_input($_POST["comment"]);
-                }
-
-                if (empty($_POST["gender"])) {
-                    $genderErr = "Gender is required";
-                } else {
-                    $gender = test_input($_POST["gender"]);
-                }
-                }
-
-                function test_input($data) {
-                $data = trim($data);
-                $data = stripslashes($data);
-                $data = htmlspecialchars($data);
-                return $data;
-                }
-                ?>
-
-                <h2>PHP Form Validation Example</h2>
-                <p><span class="error">* required field</span></p>
-                <form method="post" action="submit.php">  
-                Name: <input type="text" name="name" value="<?php echo $name;?>">
-                <span class="error">* <?php echo $nameErr;?></span>
-                <br><br>
-                E-mail: <input type="text" name="email" value="<?php echo $email;?>">
-                <span class="error">* <?php echo $emailErr;?></span>
-                <br><br>
-                Website: <input type="text" name="website" value="<?php echo $website;?>">
-                <span class="error"><?php echo $websiteErr;?></span>
-                <br><br>
-                Comment: <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
-                <br><br>
-                Gender:
-                <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="female">Female
-                <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="male">Male
-                <input type="radio" name="gender" <?php if (isset($gender) && $gender=="other") echo "checked";?> value="other">Other  
-                <span class="error">* <?php echo $genderErr;?></span>
-                <br><br>
-                <input type="submit" name="submit" value="Submit">  
-                </form>
-
-                <?php
-                echo "<h2>Your Input:</h2>";
-                echo $name;
-                echo "<br>";
-                echo $email;
-                echo "<br>";
-                echo $website;
-                echo "<br>";
-                echo $comment;
-                echo "<br>";
-                echo $gender;
-                ?>
-                </div>  
-            </div>
-            
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elys</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <section class="hero">
+        <div class="svt-pic">
+            <p class="fav-word">기억해 언제나 우린 함께라는 걸</p>
         </div>
-    </body>
+        <div class="profile">
+            <img src="./images/elys.png" alt="elys picture">
+        </div>
+        <div class="name-container">
+            <div>
+                <h2 class="my-name jost">Erika Daduya <em>!</em></h2>
+                <p class="username inter">@elysdaduya</p>
+            </div>
+        </div>
+    </section>
+    <section class="about-me">
+        <div class="description">
+            <p class="my-name jost">Erika Daduya <em>!</em></p>
+            <p class="intro inter">You can call me <b>Elys</b>. I am currently 20 years old.</p>
+        </div>
+        <div class="card-container">
+            <div class="card">
+                <h2 class="jost card-title">interest <em>!</em></h2>
+                <hr>
+                <p class="inter"><b>games:</b> VALORANT</p>
+                <p class="inter"><b>music:</b> kpop, alt R&B, pop</p>
+                <p class="inter"><b>hobbies:</b> watch YT and reels, play games, read</p>
+                <div class="img-row">
+                    <p class="footer">* hover images</p>
+                    <img src="./images/VALORANT.png" alt="VALORANT">
+                    <img src="./images/svt.jpg" alt="seventeen">
+                    <img src="./images/niki.jpg" alt="NIKI">
+                    <img src="./images/tswift.jpg" alt="taylor swift">
+                </div>
+            </div>
+            <div class="card">
+                <h2 class="jost card-title">facts <em>!</em></h2>
+                <hr>
+                <p class="inter"><b>likes:</b> mint choco, matcha, coffee, skies, pastel colors, cute stuff</p>
+                <p class="inter"><b>pets:</b> Trini and Panini</p>
+                <div class="img-row">
+                    <p class="footer">* hover images</p>
+                    <img src="./images/trini.jpg" alt="Trini">
+                    <img src="./images/panini.jpg" alt="Panini">
+                </div>
+            </div>
+            <div class="card">
+                <h2 class="jost card-title">contacts <em>!</em></h2>
+                <hr>
+                <p class="inter"><b>email:</b> elysdads@gmail.com</p>
+                <p class="inter"><b>contact no.:</b> 09326091141</p>
+                <div class="icons">
+                    <img src="./images/github.png" alt="github">
+                    <img src="./images/instagram.png" alt="instagram">
+                    <img src="./images/facebook.png" alt="facebook">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="education">
+        <h2 class="jost">education <em>!</em></h2>
+        <div>
+            <img src="./images/schools.png" alt="schools">
+        </div>
+    </section>
+    <section class="experience">
+        <div>
+            <h2 class="jost">experience <em>!</em></h2>
+            <div class="prog-lang">
+                <button onclick="goLeft()">
+                    <svg width="38" height="66" viewBox="0 0 38 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M33 61L5 33L33 5" stroke="#8AFFB2" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="carousel">
+                    <div class="images">
+                        <img src="./images/html.png" alt="html description">
+                    </div>
+                    <div class="images">
+                        <img src="./images/css.png" alt="css description">
+                    </div>
+                    <div class="images">
+                        <img src="./images/js.png" alt="js description">
+                    </div>
+                    <div class="images">
+                        <img src="./images/python.png" alt="python description">
+                    </div>
+                    <div class="images">
+                        <img src="./images/java.png" alt="java description">
+                    </div>
+                    <div class="images">
+                        <img src="./images/php.png" alt="php description">
+                    </div>
+                </div>
+                <button onclick="goRight()">
+                    <svg width="38" height="66" viewBox="0 0 38 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 61L33 33L5 5" stroke="#8AFFB2" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+</body>
 </html>
