@@ -19,10 +19,11 @@
             <div>
                 <h2 class="my-name jost">Erika Daduya <em>!</em></h2>
                 <p class="username inter">@elysdaduya</p>
+                <a href="#about-me" class="info-btn jost">more info</a>
             </div>
         </div>
     </section>
-    <section class="about-me">
+    <section class="about-me" id="about-me">
         <div class="description">
             <p class="my-name jost">Erika Daduya <em>!</em></p>
             <p class="intro inter">You can call me <b>Elys</b>. I am currently 20 years old.</p>
@@ -35,11 +36,11 @@
                 <p class="inter"><b>music:</b> kpop, alt R&B, pop</p>
                 <p class="inter"><b>hobbies:</b> watch YT and reels, play games, read</p>
                 <div class="img-row">
+                    <img src="./images/VALORANT.png" id="valo" alt="VALORANT">
+                    <img src="./images/svt.jpg" id="svt" alt="seventeen">
+                    <img src="./images/niki.jpg" id="niki" alt="NIKI">
+                    <img src="./images/tswift.jpg" id="tay-swift" alt="taylor swift">
                     <p class="footer">* hover images</p>
-                    <img src="./images/VALORANT.png" alt="VALORANT">
-                    <img src="./images/svt.jpg" alt="seventeen">
-                    <img src="./images/niki.jpg" alt="NIKI">
-                    <img src="./images/tswift.jpg" alt="taylor swift">
                 </div>
             </div>
             <div class="card">
@@ -48,9 +49,9 @@
                 <p class="inter"><b>likes:</b> mint choco, matcha, coffee, skies, pastel colors, cute stuff</p>
                 <p class="inter"><b>pets:</b> Trini and Panini</p>
                 <div class="img-row">
-                    <p class="footer">* hover images</p>
                     <img src="./images/trini.jpg" alt="Trini">
                     <img src="./images/panini.jpg" alt="Panini">
+                    <p class="footer">* hover images</p>
                 </div>
             </div>
             <div class="card">
@@ -76,36 +77,36 @@
         <div>
             <h2 class="jost">experience <em>!</em></h2>
             <div class="prog-lang">
-                <button onclick="goLeft()">
+                <a href="#php" id="left-btn">
                     <svg width="38" height="66" viewBox="0 0 38 66" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M33 61L5 33L33 5" stroke="#8AFFB2" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-                </button>
-                <div class="carousel">
-                    <div class="images">
+                </a>
+                <div class="carousel" id="carousel-container">
+                    <div class="images" id="html">
                         <img src="./images/html.png" alt="html description">
                     </div>
-                    <div class="images">
+                    <div class="images" id="css">
                         <img src="./images/css.png" alt="css description">
                     </div>
-                    <div class="images">
+                    <div class="images" id="javascript">
                         <img src="./images/js.png" alt="js description">
                     </div>
-                    <div class="images">
+                    <div class="images" id="python">
                         <img src="./images/python.png" alt="python description">
                     </div>
-                    <div class="images">
+                    <div class="images" id="java">
                         <img src="./images/java.png" alt="java description">
                     </div>
-                    <div class="images">
+                    <div class="images" id="php">
                         <img src="./images/php.png" alt="php description">
                     </div>
                 </div>
-                <button onclick="goRight()">
+                <a href="#css" id="right-btn">
                     <svg width="38" height="66" viewBox="0 0 38 66" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5 61L33 33L5 5" stroke="#8AFFB2" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M5 61L33 33L5 5" stroke="#8AFFB2" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-                </button>
+                </a>
             </div>
         </div>
     </section>

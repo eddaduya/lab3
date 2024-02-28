@@ -1,6 +1,10 @@
 @import 'https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap';
 @import 'https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap';
 
+html {
+    scroll-behavior: smooth;
+}
+
 .jost{
   font-family: "Jost", sans-serif;
   font-weight: bold;
@@ -36,6 +40,7 @@ section{
 }
 
 .svt-pic{
+    background-image: url("./images/seventeen.png");
     background-repeat: no-repeat;
     height: 30rem;
     background-position: center;
@@ -81,10 +86,20 @@ section{
 
 .username{
     font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.info-btn{
+    background-color: #8AFFB2;
+    text-decoration: none;
+    padding: .5rem 1rem;
+    border-radius: .4rem;
+    color: #11251C;
 }
 
 .about-me{
     height: 100dvh;
+    background: url("./images/elys_peace.png");
     background-repeat: no-repeat;
     object-fit: contain;
     background-size: cover;
@@ -138,6 +153,11 @@ section{
     height: 3.5rem;
     margin-right: .3rem;
     border-radius: .25rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.card .img-row img:hover{
+    height: 7rem;
 }
 
 .card .icons img{
@@ -167,22 +187,26 @@ section{
 
 .experience{
     background: linear-gradient(to bottom, #11251C, #244532);
+    height: 100dvh;
 }
 
 .experience .jost{
-    padding-top: 3rem;
+    padding-top: 1rem;
     margin-left: 7rem;
 }
 
 .prog-lang{
-    width: 68rem;
+    width: 87%;
     margin: 4rem auto 0;
     display: flex;
     overflow: hidden;
+    align-items: center;
 }
 
 .carousel{
     overflow: scroll;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
     display: grid;
     grid-auto-flow: column;
     overflow-y: hidden;
@@ -197,8 +221,9 @@ section{
     display: inline-block;
 }
 
-.prog-lang button{
+.prog-lang a{
     width: 10%;
     background-color: transparent;
     border: none;
+    padding: 3rem;
 }
